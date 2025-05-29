@@ -1,15 +1,15 @@
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <a className="navbar-brand" href="#">Mi Tienda</a>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-success px-4">
+      <Link className="navbar-brand" to="/">Viajes 2025</Link>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item"><a className="nav-link" href="#">Inicio</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">Productos</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">Contacto</a></li>
+          <li className="nav-item"><Link className="nav-link" to="/categoria/sur">Sur</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/categoria/norte">Norte</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/categoria/costa">Costa</Link></li>
         </ul>
         <CartWidget />
       </div>
