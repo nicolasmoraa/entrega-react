@@ -8,7 +8,7 @@ function Item({ id, nombre, precio, imagen }) {
         <div className="card-body">
           <h5 className="card-title">{nombre}</h5>
           <p className="card-text">${precio}</p>
-          <Link to={`/detalle/${id}`} className="btn btn-success">Ver más</Link>
+          <Link to={`/detalle/${id}`} className="btn btn-success">agregar</Link>
         </div>
       </div>
     </div>

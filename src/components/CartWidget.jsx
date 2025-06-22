@@ -1,11 +1,21 @@
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
+
 function CartWidget() {
-    return (
-      <div className="text-white d-flex align-items-center">
-        <span className="fs-4 me-2">🛒</span>
-        <span className="badge bg-secondary">3</span>
-      </div>
-    );
-  }
-  
-  export default CartWidget;
-  
+  const { getTotalQuantity } = useContext(CartContext);
+  const cantidad = getTotalQuantity();
+
+  return (
+    <Link to="/cart" className="btn btn-light position-relative">
+      🛒
+      {cantidad > 0 && (
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+          {cantidad}
+        </span>
+      )}
+    </Link>
+  );
+}
+
+export default CartWidget;

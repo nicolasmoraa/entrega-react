@@ -2,6 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
+import Cart from './components/Cart';
+import CheckoutForm from "./components/CheckoutForm";
+
 
 function App() {
   return (
@@ -11,8 +14,11 @@ function App() {
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
         <Route path="/detalle/:itemId" element={<ItemDetailContainer />} />
-        <Route path="*" element={<h2 className="text-center mt-4">404 - Página no encontrada</h2>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<CheckoutForm />} />
+        <Route path="*" element={<h2>404 - Página no encontrada</h2>} />
       </Routes>
+
     </>
   );
 }
